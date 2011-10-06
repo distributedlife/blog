@@ -1,0 +1,40 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>The Cromulent Testing Blog</title>
+ <link href="http://cromulent-testing.com/feed/index.xml" rel="self"/>
+ <link href="http://cromulent-testing.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://cromulent-testing.com/</id>
+ <author>
+   <name>Ash Rollke</name>
+ </author>
+ <author>
+   <name>Mike Bain</name>
+ </author>
+ <author>
+   <name>Ryan Boucher</name>
+ </author>
+
+  {% for post in site.posts %}
+    {% capture year  %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% capture month  %}{{ post.date | date: '%m' }}{% endcapture %}
+    {% capture cyear %}{{ 'now' | date: '%Y' }}{% endcapture %}
+    {% capture cmonth %}{{ 'now' | date: '%m' }}{% endcapture %}
+
+    {% if year <= cyear %}
+      {% if month <= cmonth %}
+        <entry>
+          <title>{{ post.title }}</title>
+          <link href="http://cromulent-testing.com{{ post.url }}"/>
+          <updated>{{ post.date | date_to_xmlschema }}</updated>
+          <id>http://cromulent-testing.com{{ post.id }}</id>
+          <content type="html">{{ post.content | xml_escape }}</content>
+        </entry>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</feed>

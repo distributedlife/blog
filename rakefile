@@ -1,0 +1,41 @@
+task :default => [:server]
+
+desc "clean and build site using Jekyll"
+task :build do
+  sh "rm -rf _site/"
+  sh "jekyll"
+end
+
+desc "run the server on localhost:4000"
+task :server do
+  sh "rm -rf _site/"
+  sh "jekyll --server --auto"
+end
+
+desc "Get the required gems"
+task :bootstrap do
+  begin
+  temp = sh 'command -v bundle >/dev/null'
+  rescue
+    puts "==Installing bundler"
+    sh 'gem install bundler'
+  end
+
+  puts "==Installing gems"
+  sh 'bundle install'
+end
+
+namespace :deploy do
+  desc "Deploy to Pre-prod"
+  task :staging do
+    sh "git push heroku-preprod master"
+  end
+
+  desc "Deploy to Prod"
+  task :prod do
+    sh "git pull github master"
+    sh "git push github master"
+    sh "git push heroku master"
+  end
+end
+
