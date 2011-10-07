@@ -1,0 +1,19 @@
+---
+layout: default
+title: 1st!
+subtitle: we all gotta start somewhere
+published: yes
+retired: yes
+tags:
+- introduction
+categories:
+- meta
+---
+### Hello and welcome.
+Before we begin I’ll briefly explain a little bit about who I am. As the title suggests by day I am a senior tester with an undisclosed organisation. By night I’m the lead developer with my company ICNH Games (www.icnh-games.com). Two full time jobs is hardly ideal but job A funds job B with the long term goal of job B (or ICNH Games as some call it) being self sufficient.
+
+So in reality, I’m probably more developer than tester but, I am senior member in a medium sized testing team so many of my day to day decisions impact non-technical testers. This places me in an interesting position especially as organisations (including ours) move towards a distributed Service Oriented Architecture. This is also something I will be blogging about in the immediate future. However, I’ll leave that for an actual post.
+
+I won’t promise to write frequently or blog for the sake of blogging. More realistically I’ll blog when I have the time and when have something worthy of note …I could be lying about its worth :) … or when I have unanswered questions.
+
+Feel free to add a comment or engage me on topic but please try to keep the spam-advertising to a minimum.

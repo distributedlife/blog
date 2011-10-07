@@ -16,7 +16,3 @@ end
 get '/feed' do
   File.read('_site/feed/index.xml')
 end
-
-get '/book.html' do
-  File.read('_site/book.html')
-end
